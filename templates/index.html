@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>Nepali Money Recognizer</title>
+    </head>
+    <body>
+        <main>
+            <h1>Nepali Money Recognizer</h1>
+            <form action="/" method="post" id="form" enctype="multipart/form-data">
+                <input type="file" name="file" id="upload-input" hidden accept="image/*" required />
+                <button id="upload-btn" type="button" role="button">Upload Image</button>
+                <button id="classify-btn" type="submit">Classify</button>
+            </form>
+            <div class="image-preview-container">
+                <img
+                    src=""
+                    class="preview-img"
+                    alt="Preview Image"
+                />
+                <div class="shadow-container">
+                    <h3 class="image-text">Press Classify</h3>
+                </div>
+            </div>
+        </main>
+        <div id="snackBar" hidden>Some Text Message</div>
+        <!-- <script src="/src/js/app.ts" type="module"></script> -->
+        <script defer src="{{ url_for('static',filename='js/main.js') }}"></script>
+    </body>
+</html>
